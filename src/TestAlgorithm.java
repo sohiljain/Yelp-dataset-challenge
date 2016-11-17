@@ -25,6 +25,7 @@ public class TestAlgorithm {
 
     public static void main(String[] args) throws ParseException, IOException {
 
+
         IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get("files/indexTips/")));
         IndexSearcher searcher = new IndexSearcher(reader);
         searcher.setSimilarity(new BM25Similarity());
@@ -33,7 +34,7 @@ public class TestAlgorithm {
         String queryString = "Indian curry sambhar rice dal"; //"airbus subsidies";
 
         Analyzer analyzer = new StandardAnalyzer();
-        QueryParser parser = new QueryParser("reviews", analyzer);
+        QueryParser parser = new QueryParser("tip", analyzer);
         Query query = parser.parse(queryString);
 
         TopScoreDocCollector collector = TopScoreDocCollector.create(10); searcher.search(query, collector);
