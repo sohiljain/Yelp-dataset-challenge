@@ -63,4 +63,17 @@ public class generateIndex {
         indexWriter.close();
 
     }
+
+//    private static String tokenizeStopStem(String input) throws IOException {
+//
+//        StringBuilder result = new StringBuilder();
+//        Analyzer analyzer = new PorterStemAnalyzer();
+//        TokenStream tokenStream = analyzer.tokenStream(input, new StringReader(keywords));
+//
+//        while(tokenStream.incrementToken()) {
+//
+//            result.append(tokenStream.getAttribute(TermAttribute.class).term());
+//        }
+//
+//    }
 }
